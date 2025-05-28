@@ -1,34 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\ProjetoAPI\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj": {}
+    "C:\\Users\\pedro\\Downloads\\ApiCulinaria-main\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\ProjetoAPI\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj": {
+    "C:\\Users\\pedro\\Downloads\\ApiCulinaria-main\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\ProjetoAPI\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj",
+        "projectUniqueName": "C:\\Users\\pedro\\Downloads\\ApiCulinaria-main\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj",
         "projectName": "ReceitasApi",
-        "projectPath": "C:\\Users\\User\\Documents\\ProjetoAPI\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\ProjetoAPI\\APICulinaria\\ReceitasApi\\obj\\",
+        "projectPath": "C:\\Users\\pedro\\Downloads\\ApiCulinaria-main\\APICulinaria\\ReceitasApi\\ReceitasApi.csproj",
+        "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pedro\\Downloads\\ApiCulinaria-main\\APICulinaria\\ReceitasApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 24.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 24.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,9 +36,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -83,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

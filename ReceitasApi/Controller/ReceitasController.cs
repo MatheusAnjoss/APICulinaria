@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReceitasApi.Data;
+using ReceitasApi.Model;
 
 namespace ReceitasApi.Controllers;
 
@@ -24,4 +25,37 @@ public class ReceitasController : ControllerBase
             .ToListAsync();
         return Ok(receitas);
     }
+
+
+    [HttpPost]
+    public IActionResult CriarReceita([FromBody] Receita novaReceita)
+    {
+        if (novaReceita == null)
+            return BadRequest("Dados Inválidos");
+
+        foreach (var alergia in novaReceita.Alergias)
+        {
+            alergia.ReceitaId = novaReceita.Id;
+        }
+
+        _context.Receitas.Add(novaReceita);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(ObterReceitaPorId), new { id = novaReceita.Id }, novaReceita);
+    }
+
+
+    [HttpGet("{id}")]
+    public IActionResult ObterReceitaPorId(int id)
+
+    {
+        var receita = _context.Receitas
+        .Include(r => r.Alergias)
+        .FirstOrDefault(r => r.Id == id);
+
+        if (receita == null)
+            return NotFound();
+
+            return Ok(receita);
+        }
 }

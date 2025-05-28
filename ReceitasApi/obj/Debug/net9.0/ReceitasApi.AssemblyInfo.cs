@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReceitasApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6236c0e3d204e03f453b32441dfd7c9b08ad92b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a60907c22de2d8ed139ba85a4e0a68fbfc8dd764")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReceitasApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReceitasApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
