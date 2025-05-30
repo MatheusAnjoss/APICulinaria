@@ -1,5 +1,6 @@
 # Receitas API
-Desenvolvido por: Matheus Anjos, Karin Pereira, Marcelo Oliveira e Pedro Guilhermem.
+Desenvolvido por: Matheus Anjos, Karin Pereira, Marcelo Oliveira e Pedro Guilherme.
+
 Bem-vindo à **Receitas API**, uma aplicação desenvolvida para gerenciar receitas culinárias e suas possíveis alergias. Esta API foi projetada para facilitar o armazenamento, consulta e manipulação de dados relacionados a receitas, com foco em simplicidade e eficiência.
 
 ## Funcionalidades
