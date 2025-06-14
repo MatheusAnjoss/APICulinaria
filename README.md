@@ -15,7 +15,7 @@ Bem-vindo à **Receitas API**, uma aplicação desenvolvida para gerenciar recei
 - **ASP.NET Core**: Framework para desenvolvimento da API.
 - **Entity Framework Core**: ORM para manipulação da base de dados.
 - **SQLite**: Banco de dados leve e eficiente.
-- **.NET 9.0**: Versão do framework utilizada.
+- **.NET 8.0**: Versão do framework utilizada.
 
 ## Rotas Principais
 
