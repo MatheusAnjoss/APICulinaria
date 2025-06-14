@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "Receitas API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar Receitas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5187/api/receitas", "protocol": "http", "host": ["localhost"], "port": "5187", "path": ["api", "receitas"] }
+      }
+    },
+    {
+      "name": "Cadastrar Receita",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Nova Receita\",\n  \"descricao\": \"Descrição\",\n  \"ingredientes\": [\"ingrediente1\", \"ingrediente2\"],\n  \"modoPreparo\": \"Modo de preparo\",\n  \"tempoPreparoMin\": 30,\n  \"alergias\": []\n}" },
+        "url": { "raw": "http://localhost:5187/api/receitas", "protocol": "http", "host": ["localhost"], "port": "5187", "path": ["api", "receitas"] }
+      }
+    },
+    {
+      "name": "Editar Receita",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nome\": \"Receita Editada\",\n  \"descricao\": \"Nova descrição\",\n  \"ingredientes\": [\"ingrediente1\", \"ingrediente2\"],\n  \"modoPreparo\": \"Novo modo\",\n  \"tempoPreparoMin\": 40,\n  \"alergias\": []\n}" },
+        "url": { "raw": "http://localhost:5187/api/receitas/1", "protocol": "http", "host": ["localhost"], "port": "5187", "path": ["api", "receitas", "1"] }
+      }
+    },
+    {
+      "name": "Remover Receita",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": { "raw": "http://localhost:5187/api/receitas/1", "protocol": "http", "host": ["localhost"], "port": "5187", "path": ["api", "receitas", "1"] }
+      }
+    },
+    {
+      "name": "Relatório - Ingredientes Mais Usados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:5187/api/relatorio/ingredientes-mais-usados", "protocol": "http", "host": ["localhost"], "port": "5187", "path": ["api", "relatorio", "ingredientes-mais-usados"] }
+      }
+    }
+  ]
+}

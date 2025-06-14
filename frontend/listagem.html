@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Receitas</title>
+  <style>
+    body {
+      background: #f7f7f7;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 32px 28px 24px 28px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 18px;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    nav a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: left;
+    }
+    th {
+      background: #f0f4f8;
+      color: #222;
+      font-weight: 600;
+    }
+    tr:hover {
+      background: #f5faff;
+    }
+    button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 6px 14px;
+      font-size: 0.98rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-right: 6px;
+      transition: background 0.2s;
+    }
+    button:last-child {
+      margin-right: 0;
+      background: #e53935;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 10px 2px; }
+      table, thead, tbody, th, td, tr { display: block; }
+      th, td { padding: 8px 4px; }
+      th { background: #f0f4f8; }
+      tr { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Listagem de Receitas</h1>
+    <nav>
+      <a href="cadastro.html">Cadastrar Receita</a>
+    </nav>
+    <div id="tela-lista"></div>
+  </div>
+  <script>
+    let receitas = JSON.parse(localStorage.getItem('receitas') || '[]');
+    function carregarLista() {
+      if (!receitas.length) {
+        document.getElementById('tela-lista').innerHTML = '<p style="text-align:center;color:#888;">Nenhuma receita cadastrada.</p>';
+        return;
+      }
+      document.getElementById('tela-lista').innerHTML = `<table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Tempo (min)</th>
+            <th>Valor (R$)</th>
+            <th>Alergias</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${receitas.map(r=>`
+            <tr>
+              <td>${r.nome}</td>
+              <td>${r.descricao}</td>
+              <td>${r.tempoPreparoMin}</td>
+              <td>${r.valor !== undefined ? r.valor.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}) : '-'}</td>
+              <td>${r.alergias && r.alergias.length ? r.alergias.map(a=>a.nome).join(', ') : '-'}</td>
+              <td>
+                <button onclick="editarReceita(${r.id})">Editar</button>
+                <button onclick="removerReceita(${r.id})" style="background:#e53935;">Remover</button>
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>`;
+    }
+    function editarReceita(id) {
+      window.location.href = `cadastro.html?id=${id}`;
+    }
+    function removerReceita(id) {
+      if (confirm('Deseja remover esta receita?')) {
+        receitas = receitas.filter(r=>r.id!==id);
+        localStorage.setItem('receitas', JSON.stringify(receitas));
+        carregarLista();
+      }
+    }
+    carregarLista();
+  </script>
+</body>
+</html>
